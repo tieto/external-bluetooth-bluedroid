@@ -28,9 +28,11 @@ LOCAL_SRC_FILES += \
     ../btif/src/btif_hf.c \
     ../btif/src/btif_av.c \
     ../btif/src/btif_rc.c \
+    ../btif/src/btif_test.c \
     ../btif/src/btif_media_task.c \
     ../btif/src/btif_hh.c \
     ../btif/src/btif_hl.c \
+    ../btif/src/btif_l2cap.c \
     ../btif/src/btif_sock.c \
     ../btif/src/btif_sock_rfc.c \
     ../btif/src/btif_sock_thread.c \
@@ -39,7 +41,10 @@ LOCAL_SRC_FILES += \
     ../btif/src/btif_pan.c \
     ../btif/src/btif_config.c \
     ../btif/src/btif_config_util.cpp \
-    ../btif/src/btif_profile_queue.c
+    ../btif/src/btif_profile_queue.c \
+    ../btif/src/btif_test_sdp.c \
+    ../btif/src/btif_test_rfcomm.c \
+    ../btif/src/btif_test_tester.c
 
 # callouts
 LOCAL_SRC_FILES+= \

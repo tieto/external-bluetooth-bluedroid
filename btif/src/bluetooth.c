@@ -1,6 +1,7 @@
 /******************************************************************************
  *
  *  Copyright (C) 2009-2012 Broadcom Corporation
+ *  Copyright (C) 2013 Tieto Corporation
  *
  *  Licensed under the Apache License, Version 2.0 (the "License");
  *  you may not use this file except in compliance with the License.
@@ -35,6 +36,7 @@
 #include <hardware/bt_hh.h>
 #include <hardware/bt_hl.h>
 #include <hardware/bt_pan.h>
+#include <hardware/bt_test.h>
 
 #define LOG_NDDEBUG 0
 #define LOG_TAG "bluedroid"
@@ -80,6 +82,8 @@ extern bthh_interface_t *btif_hh_get_interface();
 extern bthl_interface_t *btif_hl_get_interface();
 /*pan*/
 extern btpan_interface_t *btif_pan_get_interface();
+/*debug*/
+extern test_interface_t *btif_test_get_interface();
 
 /************************************************************************************
 **  Functions
@@ -319,6 +323,9 @@ static const void* get_profile_interface (const char *profile_id)
 
     if (is_profile(profile_id, BT_PROFILE_HEALTH_ID))
         return btif_hl_get_interface();
+
+    if (is_profile(profile_id, BT_PROFILE_TEST_ID))
+        return btif_test_get_interface();
     return NULL;
 }
 
